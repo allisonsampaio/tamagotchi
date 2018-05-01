@@ -1,0 +1,19 @@
+{
+  "name": "tamagotchi",
+  "version": "1.0.0",
+  "description": "APS 2 - Projeto de Linguagens de Programação - App de Virtual Pet que imita Tamagotchi original da Bandai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allisonsampaio/tamagotchi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allisonsampaio/tamagotchi/issues"
+  },
+  "homepage": "https://github.com/allisonsampaio/tamagotchi#readme"
+}
