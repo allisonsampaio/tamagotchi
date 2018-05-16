@@ -2,23 +2,42 @@
 <!DOCTYPE html>
   <head>
     <title>Virtual Pet</title>	
-  	<!--<link rel="stylesheet" href="css/index.css">-->
+  	<link rel="stylesheet" href="css/index.css">
   </head>
 
   <style type="text/css">
-  	.li-barras{
-  		list-style-type: none;
+  	
+  	.container{
+  		background: #fff;
+  		top: 10%;
+  		width: 50%;
+  		box-shadow: 1px 4px 10px #000;
+  		height: 80%;
+  		position: absolute;
+  		margin-left: 25%;
+  		padding-left: 20px;
+  	}
+
+  	/*Barras*/
+
+  	.ul-barras{list-style-type: none;}
+
+	.li-barras{
   		width: 15%;
+  		float: left;
+  		margin-left: 15px;
   	}
 
   	.progress{
 	  width: 100%;
 	  height: 20px;
 	  background: black;
+	  color: #fff;
+	  text-align: center;
 	}
 
 	.progress .status{
-	  background: blue;
+	  background: #00CD66;
 	  float: left;
 	  height: 100%;
 	  padding-left: 5px;
@@ -26,25 +45,31 @@
 	  line-height: 1.8
 	}
 
-	.status-hunger{
-	  width: 30%;	
+	.status-hunger{width: 30%;}
+
+	.status-hygiene{width: 30%;}
+
+	.status-active{width: 30%;}
+
+	.status-energy{width: 30%;}
+
+	.status-happy{width: 30%;}
+
+	/*Pet*/
+
+	.pet{
+		width: 90%;
+		border: 1px solid #000;
+		top: 20%;
+		position: absolute;
+		height: 60%;
+		margin-left: 2%;
+		background: lightblue url("teste.gif") no-repeat fixed center;
+
 	}
 
-	.status-hygiene{
-	  width: 30%;	
-	}
+	/*Footer*/
 
-	.status-active{
-	  width: 30%;	
-	}
-
-	.status-energy{
-	  width: 30%;	
-	}
-
-	.status-happy{
-	  width: 30%;	
-	}
 
   </style>
 
@@ -54,37 +79,41 @@
     		<div class="barras">
     			<ul class="ul-barras">
     				<li class="li-barras">
-    					<label>Hunger</label>
+						<label>Hunger</label>
     					<div class="progress">
-							<div class="status status-hunger" style=""></div>
+							<div class="status status-hunger"></div>
 						</div>
     				</li>
     				<li class="li-barras">
     					<label>Hygiene</label>
     					<div class="progress">
-							<div class="status status-hygiene" style=""></div>
+							<div class="status status-hygiene"></div>
 						</div>
     				</li>
     				<li class="li-barras">
     					<label>Active</label>
     					<div class="progress">
-							<div class="status status-active" style=""></div>
+							<div class="status status-active"></div>
 						</div>
     				</li>
     				<li class="li-barras">
     					<label>Energy</label>
     					<div class="progress">
-							<div class="status status-energy" style=""></div>
+							<div class="status status-energy"></div>
 						</div>
     				</li>
     				<li class="li-barras">
-    					<label>Happy</label>
+						<label>Happy</label>
     					<div class="progress">
-							<div class="status status-happy" style=""></div>
+							<div class="status status-happy"></div>
 						</div>
     				</li>
     			</ul>
     		</div>
+
+    		<div class="pet"></div>
+
+    		<div class="footer"></div>
     	</center>
     </div>
   </body>
