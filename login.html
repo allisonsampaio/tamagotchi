@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+  <head>
+    <title>Virtual Pet</title>	
+  	<link rel="stylesheet" href="css/index.css">
+  	<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script type="text/javascript" href="index.js"></script>
+  	
+  </head>
+
+  <style type="text/css">  	
+  	body {
+  		background: lightseagreen;
+  	}
+
+  	.container{
+  		background: #fff;
+  		top: 10%;
+  		width: 50%;
+  		box-shadow: 1px 4px 10px #000;
+  		height: 80%;
+  		position: absolute;
+  		margin-left: 25%;
+  		padding-left: 20px;
+
+  	}
+
+	.pet, .fundo-pet{
+		width: 90%;
+		top: 6%;
+		
+		margin-left: 2%;
+		position: absolute;
+
+	}
+
+	.pet{
+		border: 1px solid #000; 
+		height: 85%;
+	}
+
+	.nome-pet{
+		left: 26%;
+		top: -9%;
+		position: absolute;
+	}
+
+	.nome-pet input{
+		height: 45px;
+		width: 300px;
+		font-size: 18px;
+		border-radius: 4px;
+		margin-bottom: 10px;
+	}
+
+	form h1{
+		margin-left: 26px;
+		font-family: 'Bangers', cursive;
+		font-size: 50px;
+		letter-spacing: 3px;
+	}
+
+	form p{
+		font-family: 'Roboto', sans-serif;
+	}
+
+  </style>
+
+  <script type="text/javascript">
+	  	
+  </script>
+
+  <body>
+    <div class="container">
+		<div class="pet">
+			<div class="fundo-pet">
+				<div class="nome-pet">
+					<form>
+						<h1>Tamagotchi</h1>
+						<p>Usuário:</p>
+						<input type="text" name="usuario">
+						<p>Senha:</p>
+						<input type="password" name="senha">
+						<input type="submit" value="Entrar">
+						<p>Ainda não é um usuário? <a href="#">Crie uma conta.</a></p>
+					</form> 
+				</div>	
+			</div>
+		</div>
+    </div>
+  </body>
+</html>
