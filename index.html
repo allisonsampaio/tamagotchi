@@ -3,10 +3,15 @@
   <head>
     <title>Virtual Pet</title>	
   	<link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" href="index.js"></script>
+  	
   </head>
 
-  <style type="text/css">
-  	
+  <style type="text/css">  	
+  	body {
+  		background: lightseagreen;
+  	}
+
   	.container{
   		background: #fff;
   		top: 10%;
@@ -16,6 +21,7 @@
   		position: absolute;
   		margin-left: 25%;
   		padding-left: 20px;
+
   	}
 
   	/*Barras*/
@@ -45,75 +51,185 @@
 	  line-height: 1.8
 	}
 
-	.status-hunger{width: 30%;}
+	.status-hunger{width: 100%;}
 
-	.status-hygiene{width: 30%;}
+	.status-hygiene{width: 100%;}
 
-	.status-active{width: 30%;}
+	.status-active{width: 100%;}
 
-	.status-energy{width: 30%;}
+	.status-energy{width: 100%;}
 
-	.status-happy{width: 30%;}
+	.status-happy{width: 100%;}
 
 	/*Pet*/
 
-	.pet{
+	.pet, .fundo-pet{
 		width: 90%;
-		border: 1px solid #000;
-		top: 20%;
-		position: absolute;
-		height: 60%;
+		top: 15%;
+		
 		margin-left: 2%;
-		background: lightblue url("teste.gif") no-repeat fixed center;
+		position: absolute;
 
+	}
+
+	.pet{
+		border: 1px solid #000; 
+		height: 60%;
+	}
+
+	.fundo-pet{
+		background: url("dinossauro.gif") no-repeat fixed center;
+		height: 85%;
+	}
+
+	.nome-pet{
+		left: 45%;
+		top: 100%;
+		position: absolute;
 	}
 
 	/*Footer*/
 
+	.footer{
+		bottom: 10px;
+		width: 90%;
+		position: absolute;
+		height: 10%;
+		margin-left: 2%;
+	}
+
+	.footer .ul-barras .li-barras{
+		margin-left: 5px !important;
+	}
+
+	.bnt-menu{
+		border: none;
+		background: #fff;
+		width: 100%;
+		height: 40px;
+		margin-top: -15px;
+		text-align: center;
+	}
+
+	.img-menu{
+		width: 40%;
+	}
+
+	.img-jogo{
+		width: 55%;
+		margin-top: -5px;
+	}
+
+	.img-hospital{
+		width: 35%;
+	}
+
+	.img-info{
+		width: 35%;
+	}
+
 
   </style>
 
+  <script type="text/javascript">
+  	var Progress = /** @class */ (function () {
+	    function Progress(p) {
+	        this.bar = document.querySelectorAll('.progress .status-hunger')[0];
+	        this.p = p;
+	        this.update();
+	    }
+	    Progress.prototype.update = function () {
+	        this.bar.style.width = this.p + '%';
+	    };
+	    Progress.prototype.countup = function () {
+	        if (this.p < 100) {
+	            this.p += 10;
+	        }
+	        this.update();
+	    };
+	    Progress.prototype.countdown = function () {
+	        if (0 < this.p) {
+	            this.p -= 10;
+	        }
+	        this.update();
+	    };
+	    return Progress;
+	}());
+	var up = document.getElementById('up-hunger');
+	var down = document.getElementById('down-hunger');
+	var p = new Progress(0);
+	up.addEventListener('click', function () { p.countup(); });
+	down.addEventListener('click', function () { p.countdown(); });
+	  	
+  </script>
   <body>
     <div class="container">
     	<center>
     		<div class="barras">
     			<ul class="ul-barras">
     				<li class="li-barras">
-						<label>Hunger</label>
+						<label>Fome</label>
     					<div class="progress">
 							<div class="status status-hunger"></div>
 						</div>
     				</li>
     				<li class="li-barras">
-    					<label>Hygiene</label>
+    					<label>Higiene</label>
     					<div class="progress">
 							<div class="status status-hygiene"></div>
 						</div>
     				</li>
     				<li class="li-barras">
-    					<label>Active</label>
+						<label>Feliz</label>
     					<div class="progress">
-							<div class="status status-active"></div>
+							<div class="status status-happy"></div>
 						</div>
     				</li>
     				<li class="li-barras">
-    					<label>Energy</label>
+    					<label>Energia</label>
     					<div class="progress">
 							<div class="status status-energy"></div>
 						</div>
     				</li>
     				<li class="li-barras">
-						<label>Happy</label>
+    					<label>Saude</label>
     					<div class="progress">
-							<div class="status status-happy"></div>
+							<div class="status status-active"></div>
 						</div>
     				</li>
     			</ul>
     		</div>
 
-    		<div class="pet"></div>
+    		<div class="pet">
+    			<div class="fundo-pet">
+	    			<div class="nome-pet">
+	    				<h3>Name</h3>
+	    			</div>	
+    			</div>
+    		</div>
 
-    		<div class="footer"></div>
+    		<div class="footer">
+    			<ul class="ul-barras">
+    				<li class="li-barras">
+    					<button id="up-hunger" class="bnt-menu"><img src="comida.png" class="img-menu img-comida"></button>
+    				</li>
+    				<li class="li-barras">
+    					<button id="up-hygiene" class="bnt-menu"><img src="banho1.png" class="img-menu img-banho"></button>
+    				</li>
+    				<li class="li-barras">
+    					<button id="up-happy" class="bnt-menu"><img src="jogo.png" class="img-menu img-jogo"></button>
+    				</li>
+    				<li class="li-barras">
+    					<button id="up-energy" class="bnt-menu"><img src="dorme.png" class="img-menu img-dorme"></button>
+    				</li>
+    				<li class="li-barras">
+    					<button id="up-energy" class="bnt-menu"><img src="hospital.png" class="img-menu img-active"></button>
+    				</li>
+    				<li class="li-barras">
+    					<button class="bnt-menu"><img src="info.png" class="img-menu img-info"></button>
+    				</li>
+    			</ul>
+    		</div>
     	</center>
     </div>
   </body>
