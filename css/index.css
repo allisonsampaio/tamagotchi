@@ -1,4 +1,4 @@
-body {
+  	body {
   		background: lightseagreen;
   	}
 
@@ -68,7 +68,7 @@ body {
 	}
 
 	.fundo-pet{
-		background: url("dinossauro.gif") no-repeat fixed center;
+		background: url("./src/character/teste.gif") no-repeat fixed center;
 		height: 85%;
 	}
 
@@ -117,4 +117,3 @@ body {
 	.img-info{
 		width: 35%;
 	}
-

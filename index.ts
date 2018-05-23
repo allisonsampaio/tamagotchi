@@ -8,7 +8,7 @@ class Progress {
   }
   private update() {
   	this.bar.style.width = this.p + '%';
-  }  
+  }
   countup() {
   	if (this.p < 100) { this.p += 10; }
     this.update();
